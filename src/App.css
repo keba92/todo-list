@@ -1,38 +1,129 @@
-.App {
+body{
+  background-color: #4a4d4e;
+}
+
+.container{
+  width: 100%;
+  min-height: 800px;
+}
+
+.todos{
+  margin-left: 25%;
+  margin-right: 20%;
+}
+
+.react-grid-layout {
+  position: relative;
+  transition: height 200ms ease;
+}
+.react-grid-item {
+  transition: all 200ms ease;
+  transition-property: left, top;
+  border-radius: 5px;
+}
+.react-grid-item.cssTransforms {
+  transition-property: transform;
+}
+.react-grid-item.resizing {
+  z-index: 1;
+  will-change: width, height;
+}
+
+.react-grid-item.react-draggable-dragging {
+  transition: none;
+  z-index: 3;
+  will-change: transform;
+}
+
+.react-grid-item.react-grid-placeholder {
+  opacity: 0.2;
+  transition-duration: 100ms;
+  z-index: 2;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  -o-user-select: none;
+  user-select: none;
+}
+
+.react-grid-item > .react-resizable-handle {
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  bottom: 0;
+  right: 0;
+  cursor: se-resize;
+}
+
+.react-grid-item > .react-resizable-handle::after {
+  content: "";
+  position: absolute;
+  right: 3px;
+  bottom: 3px;
+  width: 5px;
+  height: 5px;
+  border-right: 2px solid rgba(0, 0, 0, 0.4);
+  border-bottom: 2px solid rgba(0, 0, 0, 0.4);
+}
+
+.changeColor{
+  float: left;
+  display: none;
+  transition: 1s;
+}
+
+.close{
+  margin-right: 5px;
+  margin-top: 5px;
+  float: right;
+  display: none;
+  transition: 1s;
+}
+
+.inputBlock{
+  text-align: center;
+  display: none;
+  transition: 1s;
+}
+
+.inputText{
+  margin-top: 5px;
+  width: 500px;
+  height: 20px;
+  transition: 1s;
+}
+
+.blue{
+  background: rgb(91, 216, 238);
+  width: 15px;
+  height: 15px;
+  margin-left: 4px
+}
+
+.pink{
+  background: pink;
+  width: 15px;
+  height: 15px;
+  margin-left: 4px
+}
+
+.yellow{
+  background: yellow;
+  width: 15px;
+  height: 15px;
+  margin-left: 4px
+}
+
+.blockShow:hover .show{
+  display:block;
+  transform: scale();
+  transition: 1s;
+}
+
+.textBlock{
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+textarea{
+  min-height: 40px;
 }
